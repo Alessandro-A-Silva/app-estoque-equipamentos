@@ -6,10 +6,8 @@
 
         public function __construct(string $numero)
         {
-            if(!$this->validar($numero))
-               throw new InvalidArgumentException("Número de cpf invalido.");
-            else
-                $this->numero = $numero;
+            $this->validar($numero);
+            $this->numero = $numero;
         }
 
         public function getNumero(): string
@@ -25,7 +23,7 @@
                 .substr($this->numero,9,2);
         }
 
-        private function validar(string $numero): bool
+        private function validar(string $numero)
         {   
             //remove os cara não númericos 
             $numero = preg_replace('/[^0-9]/', '', $numero);
@@ -33,11 +31,11 @@
             //verifica se o cpf tem 11 digitos ou se os digitos são iguais
             if(strlen($numero) != 11 || preg_match('/(\d)\1{10}/', $numero))
             {
-                return false;
+                throw new InvalidArgumentException("Número de cpf inválido.");
             }
 
             //calcula o digito verificador do cpf
-            for ($t = 9; $t < 11; $t++) 
+            for($t = 9; $t < 11; $t++) 
             {
                 $soma = 0;
                 
@@ -51,11 +49,10 @@
 
                 if($numero[$t] != $digito)
                 {
-                    return false;
+                    throw new InvalidArgumentException("Número de cpf inválido.");
                 }
             }
 
-            return true;
         }
 
     }

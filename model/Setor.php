@@ -1,18 +1,20 @@
 <?php
 
+    require_once __DIR__ . "/../util/Telefone.php";
+
     class Setor
     {
         private int $id;
         private string $nome;
         private string $descricao;
-        private string $telefone;
+        private Telefone $telefone;
 
         public function __construct(int $id, string $nome, string $descricao, string $telefone)
         {
             $this->id = $id;
             $this->nome = $nome;
             $this->descricao = $descricao;
-            $this->telefone = $telefone;
+            $this->telefone = new Telefone($telefone);
         }
         
         /**
@@ -81,7 +83,15 @@
          */ 
         public function getTelefone()
         {
-            return $this->telefone;
+            return $this->telefone->getNumero();
+        }
+
+        /**
+         * Obtem o número do telefone no formato: Telefone móvel (00) 0 0000-0000 ou Telefone fixo (00) 0000-0000
+         */ 
+        public function getTelefoneFormatado()
+        {
+            return $this->telefone->getNumeroFormatado();
         }
 
         /**
