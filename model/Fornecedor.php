@@ -5,8 +5,7 @@
         private int $id;
         private string $nomeFantasia;
         private string $razaoSocial;
-        private Cnpj $cnpj;  
-    
+        private Cnpj $cnpj;
     
         public function __construct(int $id, string $nomeFantasia, string $razaoSocial, string $cnpj)
         {
@@ -29,7 +28,7 @@
          *
          * @return  self
          */ 
-        public function setId( int $id)
+        public function setId(int $id)
         {
                 $this->id = $id;
 
@@ -49,7 +48,7 @@
          *
          * @return  self
          */ 
-        public function setNomeFantasia( string $nomeFantasia)
+        public function setNomeFantasia(string $nomeFantasia)
         {
                 $this->nomeFantasia = $nomeFantasia;
 
@@ -69,7 +68,7 @@
          *
          * @return  self
          */ 
-        public function setRazaoSocial( string $razaoSocial)
+        public function setRazaoSocial(string $razaoSocial)
         {
                 $this->razaoSocial = $razaoSocial;
 
@@ -89,7 +88,7 @@
          *
          * @return  self
          */ 
-        public function setCnpj( string $cnpj)
+        public function setCnpj(string $cnpj)
         {
                 $this->cnpj = new Cnpj($cnpj);
 
