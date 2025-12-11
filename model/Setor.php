@@ -6,7 +6,7 @@
     {
         private int $id;
         private string $nome;
-        private string $descricao;
+        private string $descricao;        
         private Telefone $telefone;
 
         public function __construct(int $id, string $nome, string $descricao, string $telefone)
