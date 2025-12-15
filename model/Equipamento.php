@@ -1,6 +1,6 @@
 <?php
 
-class Equipamentos
+class Equipamento
 {
     private int $id;
     private string $nome;

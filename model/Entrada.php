@@ -40,7 +40,7 @@ class Entrada
         return $this->usuario;
     }
 
-    public function getFornecedor(): Usuario
+    public function getFornecedor(): Fornecedor
     {
         return $this->fornecedor;
     }

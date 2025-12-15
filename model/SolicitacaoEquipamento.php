@@ -1,24 +1,24 @@
 <?php
 
 require_once __DIR__ . "/Solicitacao.php";
-require_once __DIR__ . "/Equipamentos.php";
+require_once __DIR__ . "/Equipamento.php";
 
-class SolicitacaoEquipamentos
+class SolicitacaoEquipamento
 {
     private int $id;
     private Solicitacao $solicitacao;
-    private Equipamentos $equipamentos;
+    private Equipamento $equipamento;
     private int $quantidade;
 
     public function __construct(
         int $id,
         Solicitacao $solicitacao,
-        Equipamentos $equipamentos,
+        Equipamento $equipamento,
         int $quantidade
     ) {
         $this->id = $id;
         $this->solicitacao = $solicitacao;
-        $this->equipamentos = $equipamentos;
+        $this->equipamento = $equipamento;
         $this->quantidade = $quantidade;
     }
 
@@ -32,9 +32,9 @@ class SolicitacaoEquipamentos
         return $this->solicitacao;
     }
 
-    public function getEquipamentos(): Equipamentos
+    public function getEquipamentos(): Equipamento
     {
-        return $this->equipamentos;
+        return $this->equipamento;
     }
 
     public function getQuantidade(): int

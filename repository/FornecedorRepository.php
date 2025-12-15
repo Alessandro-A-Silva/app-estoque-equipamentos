@@ -24,7 +24,9 @@
                 throw new Exception("Falha ao registrar fornecedor.");
             }
             
-            return (int)$this->pdo->lestInsertId();
-        } 
+            return (int)$this->pdo->lastInsertId();
+        }
+
+        
 
     }
