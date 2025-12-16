@@ -2,14 +2,16 @@
 
 require_once __DIR__ . "/Usuario.php";
 require_once __DIR__ . "/Solicitacao.php";
+require_once __DIR__ . "/../util/SaidaTipo.php";
+require_once __DIR__ . "/../util/Situacao.php";
 
 class Saida
 {
     private int $id;
     private Solicitacao $solicitacao;
     private Usuario $usuario;
-    private string $tipo;
-    private string $situacao;
+    private SaidaTipo $tipo;
+    private Situacao $situacao;
     private string $descricao;
     private string $dataRegistro;
 
@@ -17,8 +19,8 @@ class Saida
         int $id,
         Solicitacao $solicitacao,
         Usuario $usuario,
-        string $tipo,
-        string $situacao,
+        SaidaTipo $tipo,
+        Situacao $situacao,
         string $descricao,
         string $dataRegistro
     ) {
@@ -46,12 +48,12 @@ class Saida
         return $this->usuario;
     }
 
-    public function getTipo(): string
+    public function getTipo(): SaidaTipo
     {
         return $this->tipo;
     }
 
-    public function getSituacao(): string
+    public function getSituacao(): Situacao
     {
         return $this->situacao;
     }

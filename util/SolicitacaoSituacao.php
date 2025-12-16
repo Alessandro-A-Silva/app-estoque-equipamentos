@@ -1,6 +1,6 @@
 <?php
 
-    enum NivelAcesso: string 
+    enum SolicitacaoSituacao: string 
     {   
         case pendente = "pendente";
         case aprovada = "aprovada";

@@ -2,13 +2,15 @@
 
 require_once __DIR__ . "/Usuario.php";
 require_once __DIR__ . "/Fornecedor.php";
+require_once __DIR__ . "/../util/EntradaTipo.php";
+require_once __DIR__ . "/../util/Situacao.php";
 class Entrada
 {
     private int $id;
     private Usuario $usuario;      // quem registrou a entrada
     private Fornecedor $fornecedor;   // fornecedor da entrada
-    private int $tipo;
-    private int $situacao;
+    private EntradaTipo $tipo;
+    private Situacao $situacao;
     private string $descricao;
     private string $dataRegistro;
 
@@ -16,8 +18,8 @@ class Entrada
         int $id,
         Usuario $usuario,
         Fornecedor $fornecedor,
-        int $tipo,
-        int $situacao,
+        EntradaTipo $tipo,
+        Situacao $situacao,
         string $descricao,
         string $dataRegistro
     ) {
@@ -45,12 +47,12 @@ class Entrada
         return $this->fornecedor;
     }
 
-    public function getTipo(): int
+    public function getTipo(): EntradaTipo
     {
         return $this->tipo;
     }
 
-    public function getSituacao(): int
+    public function getSituacao(): Situacao
     {
         return $this->situacao;
     }

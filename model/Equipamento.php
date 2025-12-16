@@ -1,12 +1,14 @@
 <?php
 
+require_once __DIR__ . "/../util/EquipamentoTipo.php";
+
 class Equipamento
 {
     private int $id;
     private string $nome;
     private string $descricao;
     private string $marca;
-    private int $tipo;
+    private EquipamentoTipo $tipo;
     private string $ca;
     private string $caValidade;
     private int $quantidade;
@@ -16,7 +18,7 @@ class Equipamento
         string $nome,
         string $descricao,
         string $marca,
-        int $tipo,
+        EquipamentoTipo $tipo,
         string $ca,
         string $caValidade,
         int $quantidade
@@ -52,7 +54,7 @@ class Equipamento
         return $this->marca;
     }
 
-    public function getTipo(): int
+    public function getTipo(): EquipamentoTipo
     {
         return $this->tipo;
     }

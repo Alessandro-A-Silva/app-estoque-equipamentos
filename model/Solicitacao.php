@@ -2,12 +2,13 @@
 
 require_once __DIR__ . "./Usuario.php"; // usa sua classe já existente
 require_once __DIR__ . "./Setor.php";
+require_once __DIR__ . "/../util/SolicitacaoSituacao.php";
 
 class Solicitacao {
     private int $id;
     private Usuario $usuario;
     private Setor $setor;  
-    private string $situacao;
+    private SolicitacaoSituacao $situacao;
     private string $descricao; 
     private string $dataRegistro;
 
@@ -15,7 +16,7 @@ class Solicitacao {
         int $id,
         Usuario $usuario,
         Setor $setor,
-        string $situacao,
+        SolicitacaoSituacao $situacao,
         string $descricao,
         string $dataRegistro
     ) {
@@ -42,7 +43,7 @@ class Solicitacao {
         return $this->setor;
     }
 
-    public function getSituacao(): string 
+    public function getSituacao(): SolicitacaoSituacao 
     {
         return $this->situacao;
     }
